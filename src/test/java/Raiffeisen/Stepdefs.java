@@ -1,6 +1,5 @@
-package skeleton;
+package Raiffeisen;
 
-import Raiffeisen.Belly;
 import cucumber.api.java.en.Given;
 
 public class Stepdefs {
