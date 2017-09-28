@@ -1,8 +1,11 @@
 package Raiffeisen;
 
 import cucumber.api.PendingException;
+import cucumber.api.Transpose;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
+
+import java.util.List;
 
 public class Stepdefs {
     @Given("^I have (\\d+) cukes in my belly$")
@@ -17,5 +20,13 @@ public class Stepdefs {
             System.out.println("Прямоугольный треугольник");
         }
 
+    }
+
+    @Given("^User table:$")
+    public void userTable(@Transpose List<Whereabouts> whereabouts) throws Throwable {
+        for (Whereabouts whereabout : whereabouts) {
+            System.out.println(whereabout.name);
+            System.out.println(whereabout.surname);
+        }
     }
 }
