@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(plugin = {"pretty"},
-features="src/main/java/Raiffeisen/Belly.java")
+features="src/test/resourses/Raiffeisen")
 public class RunCukesTest {
 
 }

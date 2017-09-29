@@ -7,8 +7,13 @@ Feature: Belly
     Then my belly should growl
 
   Scenario Template:
-    When Стороны треугольника равны <first>, <second>, <third>
+    When Стороны    треугольника равны <first>, <second>, <third>
     Examples:
       | first | second | third |
       | 90    | 45     | 45    |
       | 30    | 120    | 30    |
+
+  Scenario: Users info
+    Given User table:
+      | name    | Ivan   | Petr   |
+      | surname | Ivanov | Petrov |
