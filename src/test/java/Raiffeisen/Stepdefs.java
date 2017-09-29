@@ -5,6 +5,7 @@ import cucumber.api.PendingException;
 import cucumber.api.Transpose;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.By;
 
 import java.util.List;
 
@@ -37,5 +38,14 @@ public class Stepdefs extends ProjectUtils{
             System.out.println(whereabout.name);
             System.out.println(whereabout.surname);
         }
+    }
+
+    @Given("^User's write (\\w*) and (\\w*)$")
+    public void userSWriteLoginAndPassword(String login, String password) throws Throwable {
+        base.driver.get("http://shipovalov.net/login_page.php");
+        base.driver.findElement(By.name("username")).sendKeys("student");
+        base.driver.findElement(By.name("password")).sendKeys("luxoft");
+
+
     }
 }

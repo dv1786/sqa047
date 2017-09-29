@@ -5,6 +5,7 @@ import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import org.junit.Before;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class Hook extends ProjectUtils {
 
@@ -15,15 +16,13 @@ public class Hook extends ProjectUtils {
     }
 
     @Before
-    public void checkName (Scenario scenario){
+    public void checkName (){
         //браузер висит постоянно
-        base.driver = new ChromeDriver();
-        System.setProperty("webdriver.chrome.driver","link/chromedriver.exe");
+        base.driver = new InternetExplorerDriver();
+        System.setProperty("webdriver.chrome.driver","link/IEDriverServer.exe");
         base.driver.manage().window().maximize();
 
-        if ( scenario.getSourceTagNames().equals("Bella")){
-            System.out.println(scenario.getSourceTagNames());
-        }
+
 
 
         }
