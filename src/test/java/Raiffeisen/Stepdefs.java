@@ -1,5 +1,6 @@
 package Raiffeisen;
 
+import Utils.ProjectUtils;
 import cucumber.api.PendingException;
 import cucumber.api.Transpose;
 import cucumber.api.java.en.Given;
@@ -7,11 +8,19 @@ import cucumber.api.java.en.When;
 
 import java.util.List;
 
-public class Stepdefs {
+public class Stepdefs extends ProjectUtils{
+    public ProjectUtils base;
+
+    public Stepdefs(ProjectUtils base) {
+        this.base = base;
+    }
+
+
     @Given("^I have (\\d+) cukes in my belly$")
     public void I_have_cukes_in_my_belly(int cukes) throws Throwable {
         Belly belly = new Belly();
         belly.eat(cukes);
+
     }
 
     @When("^Стороны треугольника равны (\\d+), (\\d+), (\\d+)$")
